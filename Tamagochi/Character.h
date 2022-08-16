@@ -11,6 +11,6 @@ public:
 	void feed();
 	void play();
 	void cradle();
-	
+	void healing();
 };
 
