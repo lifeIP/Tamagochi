@@ -8,7 +8,10 @@ int main() {
 		Character pet;
 		try {
 			//actions with the character
+			pet.upload_past_save("petNO1.svpt");
 			
+			pet.save_change("petNO1.svpt");
+			std::cout << pet.get_level_fatigue() << "\t" << pet.get_level_health() << "\t" << pet.get_level_hunger() << std::endl;
 		}
 		catch (std::string a) {
 			//character death

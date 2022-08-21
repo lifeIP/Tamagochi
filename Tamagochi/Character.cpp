@@ -28,6 +28,64 @@ void Character::monitoring_indicators()
 		")\n"));
 }
 
+void Character::upload_past_save(const std::string& file_name)
+{
+	std::ifstream file;
+	file.open(file_name);
+	if (file.is_open()) {
+		char data[7] = {};
+		file.read(data, 6);
+		char tmp[3] = {};
+		for (int i = 0; i < 3; i++) {
+			strncpy_s(tmp, data + i * 2, 2);
+
+			switch (i)
+			{
+			case 0:
+				level_fatigue = atoi(tmp);
+				break;
+			case 1:
+				level_health = atoi(tmp);
+				break;
+			case 2:
+				level_hunger = atoi(tmp);
+				break;
+			}
+		}
+	}
+	else {
+		std::cout << "Error FILE_IS_NOT_OPEN" << std::endl;
+	}
+}
+
+void Character::save_change(const std::string& file_name)
+{
+	std::ofstream file;
+	file.open(file_name);
+	if (file.is_open()) {
+		std::string tmp;
+		if (level_fatigue < 10) {
+			tmp = "0" + std::to_string(level_fatigue);
+		}
+		else {
+			tmp = std::to_string(level_fatigue);
+		}
+		if (level_health < 10) {
+			tmp += "0" + std::to_string(level_health);
+		}
+		else {
+			tmp += std::to_string(level_health);
+		}
+		if (level_hunger < 10) {
+			tmp += "0" + std::to_string(level_hunger);
+		}
+		else {
+			tmp += std::to_string(level_hunger);
+		}
+		file.write(tmp.c_str(), tmp.size());
+	}
+}
+
 Character::Character()
 {
 	level_fatigue = 0;

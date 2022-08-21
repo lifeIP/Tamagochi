@@ -27,6 +27,8 @@ private:
 	Loger log;
 	void monitoring_indicators();
 public:
+	void upload_past_save(const std::string& file_name);
+	void save_change(const std::string& file_name);
 	Character();
 	short get_level_health()const;
 	short get_level_hunger()const;
