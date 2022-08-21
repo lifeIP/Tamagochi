@@ -1,9 +1,30 @@
 #pragma once
+#include <string>
+#include <fstream>
+class Loger
+{
+public:
+	Loger() {
+		file.open("pet_life.log", std::ios::app);
+	}
+	int log_send(const std::string& log) {
+		file.write(log.c_str(), log.size());
+		return file.is_open();
+	}
+	~Loger() {
+		file.close();
+	}
+private:
+	std::fstream file;
+};
+
 class Character
 {
+private:
 	short level_health; 
 	short level_hunger;
 	short level_fatigue;
+	Loger log;
 	void monitoring_indicators();
 public:
 	Character();

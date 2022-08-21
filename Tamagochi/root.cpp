@@ -1,18 +1,18 @@
-﻿#include <iostream>
-#include "Character.h"
-#include <string>
+﻿#include "Character.h"
+#include <iostream>
 
 int main() {
-	Character pet;
-	try {
-		for (int i = 0; i <= 20; i++) {
-			pet.play(1);
+	bool start_gm;
+	do {
+		start_gm = false;
+		Character pet;
+		try {
+			//actions with the character
+			
 		}
-	}
-	catch (std::string a){
-		std::cout << pet.get_level_health() << std::endl;
-		std::cout << pet.get_level_hunger() << std::endl;
-		std::cout << pet.get_level_fatigue() << std::endl;
-		std::cout << a << std::endl;
-	}
+		catch (std::string a) {
+			//character death
+			
+		}
+	} while (start_gm);
 }
