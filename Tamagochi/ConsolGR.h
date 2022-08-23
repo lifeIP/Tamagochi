@@ -22,12 +22,14 @@ enum ConsoleColor
     White         = 15
 };
 class ConsolGR{
-	HANDLE hStdOut;
 	HANDLE hd;
+    CONSOLE_SCREEN_BUFFER_INFO csbInfo;
 	COORD coords;
 public:
 	ConsolGR(const std::string& title);
 	void set_Point_s(const int& x, const int& y);
 	void print(const std::string& msg);
 	void SetColor(ConsoleColor text, ConsoleColor background);
+    void GetBufferChars(COORD *Size);
+    void ClearCarnel(COORD startCLS, COORD endCLS);
 };

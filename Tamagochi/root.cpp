@@ -4,15 +4,24 @@
 #include <windows.h>
 #include "ConsolGR.h"
 
+
+bool choise(ConsolGR* GR, const std::string& msg){
+	GR->set_Point_s(0, 0);
+	GR->print("This is test!");
+	return 1;
+}
 int main() {
+	ConsolGR GR("Tamagochi");
 	bool start_gm;
 	do {
 		start_gm = false;
 		Character pet;
 		try {
 			//actions with the character
-			pet.upload_past_save("petNO1.svpt");
-			
+			if(choise(&GR, "sad")){
+				pet.upload_past_save("petNO1.svpt");
+				std::cout << "\t101\t";
+			}
 			
 			
 			
