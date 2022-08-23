@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.2)
+	 
+project(Tamagochi)			
+set(SOURCE_EXE root.cpp)
+set(SOURCE_LIB_CHARACTER Character.cpp Character.h)
+set(SOURCE_LIB_CONSOLGR ConsolGR.cpp ConsolGR.h)
+add_library(lib_0 STATIC ${SOURCE_LIB_CHARACTER})
+add_library(lib_1 STATIC ${SOURCE_LIB_CONSOLGR})
+add_executable(main ${SOURCE_EXE})
+target_link_libraries(main lib_0 lib_1)
