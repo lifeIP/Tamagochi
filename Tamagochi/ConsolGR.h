@@ -28,6 +28,9 @@ class ConsolGR{
 public:
 	ConsolGR(const std::string& title);
 	void set_Point_s(const int& x, const int& y);
+    void set_Point_s(COORD coord);
+    void SetWindowSize(int Width, int Height);
+    void SetWindowSize(COORD coord);
 	void print(const std::string& msg);
 	void SetColor(ConsoleColor text, ConsoleColor background);
     void GetBufferChars(COORD *Size);

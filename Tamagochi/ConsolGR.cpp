@@ -10,6 +10,9 @@ void ConsolGR::set_Point_s(const int& x, const int& y){
 	coords.X = x;
 	coords.Y = y;
 }
+void ConsolGR::set_Point_s(COORD coord){
+	coords = coord;
+}
 void ConsolGR::print(const std::string& msg){
 	SetConsoleCursorPosition(hd, coords);
 	std::cout << msg;
@@ -32,4 +35,26 @@ void ConsolGR::ClearCarnel(COORD startCLS, COORD endCLS){
 			std::cout << " ";
 		}
 	}
+}
+void ConsolGR::SetWindowSize(int Width, int Height)
+{
+    _COORD coord;
+    coord.X = Width;
+    coord.Y = Height;
+    _SMALL_RECT Rect;
+    Rect.Top = 0;
+    Rect.Left = 0;
+    Rect.Bottom = Height - 1;
+    Rect.Right = Width - 1;
+    SetConsoleScreenBufferSize(hd, coord);            // Set Buffer Size
+    SetConsoleWindowInfo(hd, TRUE, &Rect);            // Set Window Size
+}
+void ConsolGR::SetWindowSize(COORD coord){
+    _SMALL_RECT Rect;
+    Rect.Top = 0;
+    Rect.Left = 0;
+    Rect.Bottom = coord.Y - 1;
+    Rect.Right = coord.X - 1;
+    SetConsoleScreenBufferSize(hd, coord);            // Set Buffer Size
+    SetConsoleWindowInfo(hd, TRUE, &Rect);            // Set Window Size
 }

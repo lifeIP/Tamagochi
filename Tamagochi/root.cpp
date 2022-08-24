@@ -3,26 +3,21 @@
 #include <string>
 #include <windows.h>
 #include "ConsolGR.h"
+#include "CMNDarea.h"
 
 
-bool choise(ConsolGR* GR, const std::string& msg){
-	GR->set_Point_s(0, 0);
-	GR->print("This is test!");
-	return 1;
-}
 int main() {
 	ConsolGR GR("Tamagochi");
+	CMNDarea CM(GR);
 	bool start_gm;
 	do {
 		start_gm = false;
 		Character pet;
 		try {
 			//actions with the character
-			if(choise(&GR, "sad")){
+			if(CM.choise_YorN(&GR, "Download the data of the last game? (y or n): ")){
 				pet.upload_past_save("petNO1.svpt");
-				std::cout << "\t101\t";
 			}
-			
 			
 			
 			pet.save_change("petNO1.svpt");
