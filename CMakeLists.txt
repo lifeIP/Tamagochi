@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.2)
+	 
+project(Tamagochi)			
+set(SOURCE_EXE root.cpp)
+set(SOURCE_LIB_CHARACTER Character.cpp Character.h)
+set(SOURCE_LIB_CONSOLGR ConsolGR.cpp ConsolGR.h)
+set(SOURCE_LIB_CMNDAREA CMNDarea.h CMNDarea.cpp)
+set(SOURCE_LIB_SPIDER Spider.h Spider.cpp)
+add_library(lib_0 STATIC ${SOURCE_LIB_CHARACTER})
+add_library(lib_1 STATIC ${SOURCE_LIB_CONSOLGR})
+add_library(lib_2 STATIC ${SOURCE_LIB_CMNDAREA})
+add_library(lib_3 STATIC ${SOURCE_LIB_SPIDER})
+
+add_executable(main ${SOURCE_EXE})
+target_link_libraries(main lib_0 lib_1 lib_2 lib_3)
