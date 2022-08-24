@@ -54,7 +54,7 @@ void Character::upload_past_save(const std::string& file_name)
 		}
 	}
 	else {
-		std::cout << "Error FILE_IS_NOT_OPEN" << std::endl;
+		save_change("001000");
 	}
 }
 

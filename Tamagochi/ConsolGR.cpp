@@ -1,9 +1,11 @@
 #include "ConsolGR.h"
 #include <string>
 #include <iostream>
+#include <windows.h>
 
 ConsolGR::ConsolGR(const std::string& title){    
-	SetConsoleTitle("title");
+	SetConsoleTitle("SUPER Spider");
+    system("color 07");
 	hd = GetStdHandle(STD_OUTPUT_HANDLE);
 }
 void ConsolGR::set_Point_s(const int& x, const int& y){
