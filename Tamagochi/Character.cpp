@@ -1,6 +1,13 @@
 #include "Character.h"
 #include <iostream>
 #include <string>
+
+void Character::restart(){
+	level_fatigue = 0;
+	level_health = 10;
+	level_hunger = 0;
+}
+
 void Character::monitoring_indicators()
 {
 	if (level_hunger > 10) {
@@ -18,6 +25,7 @@ void Character::monitoring_indicators()
 	}
 
 	if (level_health < 1) {
+		level_health = 0;
 		log.log_send(std::string("*****\tPET RIP\t*****\n"));
 		throw std::string("THE_PET_DIED");
 	}

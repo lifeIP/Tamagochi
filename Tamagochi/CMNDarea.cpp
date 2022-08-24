@@ -64,7 +64,7 @@ bool CMNDarea::choise_YorN(ConsolGR* GR, const std::string& msg){
     else tmp = tmp_s.c_str()[0];    
 	if(tmp == 'Y' ||  tmp == 'y') return true;
 	else if(tmp == 'N' ||  tmp == 'n') return false;
-	msg_tmp = "INVALID, Try again! " + msg;
+	msg_tmp = "ERROR, Try again! " + msg;
 	clear(GR);
 	goto ptr_0;
 }
