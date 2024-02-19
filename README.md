@@ -17,3 +17,10 @@ It is convenient to build a project in cmake, but you can also use VS.
 Другие классы отвечают за графику, ведение журнала и хранение данных.
 
 Удобно создавать проект в cmake, но вы также можете использовать VS.
+
+# Кадры из игры
+![image](https://github.com/lifeIP/Tamagochi/assets/97748864/5307d38a-65c5-49f1-84d8-de164c462abf)
+![image](https://github.com/lifeIP/Tamagochi/assets/97748864/55a45e05-db05-4f30-a2c7-99fd1da47a88)
+![image](https://github.com/lifeIP/Tamagochi/assets/97748864/d7349ef7-16eb-4480-bd1e-cd88cf38b747)
+![image](https://github.com/lifeIP/Tamagochi/assets/97748864/9c954ec4-834b-4946-98f8-ec052b2f115d)
+
